@@ -1,0 +1,27 @@
+﻿
+@{
+    ViewData["Title"] = "GameOfLife";
+}
+
+<h1>GameOfLife</h1>
+
+@model List<List<bool>>
+
+@foreach (var item in Model)
+{
+    <p>hi</p>
+}
+
+@*<form action="../Home/GameOfLife" method="post">
+    @{ int count = 0; }
+    @foreach (var list1 in Model)
+    {
+        foreach (var list2 in list1)
+        {
+           <input type="checkbox" name="number@count" value="@list2" />
+           <p>@count</p>
+            count++;
+        }
+    }
+    <input type="submit" value="Submit" />
+</form>*@

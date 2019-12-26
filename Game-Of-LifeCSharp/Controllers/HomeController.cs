@@ -28,6 +28,32 @@ namespace Game_Of_LifeCSharp.Controllers
             return View();
         }
 
+        public IActionResult GameOfLifeSetup(int num1, int num2)
+        {
+            List<bool> boardList = new List<bool>();
+            List<List<bool>> boardGame = new List<List<bool>>();
+            for (int i = 0; i < num1; i++)
+            {
+                boardList.Add(false);
+            }
+            for (int i = 0; i < num2; i++)
+            {
+                boardGame.Add(boardList);
+            }
+            TempData["board"] = boardGame;
+            return RedirectToAction("GameOfLife");
+        }
+        
+        public IActionResult GameOfLife(List<List<bool>> boardGame)
+        {
+            var temp = TempData["board"];
+            if (boardGame.Count == 0)
+            {
+                return View(TempData["board"]);
+            }
+            return View(boardGame);
+        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {

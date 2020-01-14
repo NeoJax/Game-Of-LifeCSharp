@@ -7,21 +7,16 @@
 
 @model List<List<bool>>
 
-@foreach (var item in Model)
-{
-    <p>hi</p>
-}
-
-@*<form action="../Home/GameOfLife" method="post">
+<form action="../Home/GameOfLifeContinue" method="post">
     @{ int count = 0; }
     @foreach (var list1 in Model)
     {
+        <br />
         foreach (var list2 in list1)
         {
            <input type="checkbox" name="number@count" value="@list2" />
-           <p>@count</p>
             count++;
         }
     }
     <input type="submit" value="Submit" />
-</form>*@
+</form>
